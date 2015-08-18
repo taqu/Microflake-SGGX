@@ -262,9 +262,7 @@ public:
 		#endif
 
         Point2 point = sampler->next2D();
-		Vector wo=sample_specular(wi, Sxx, Syy, Szz, Sxy, Sxz, Syz, point.x, point.y);
-		wo = normalize(wo);
-		pRec.wo = Vector(wo.x,wo.y,wo.z);
+		pRec.wo = sample_specular(wi, Sxx, Syy, Szz, Sxy, Sxz, Syz, point.x, point.y);
 
 		return 1.0f;
 	}
